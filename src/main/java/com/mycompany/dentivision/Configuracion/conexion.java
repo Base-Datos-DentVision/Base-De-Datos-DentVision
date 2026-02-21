@@ -10,18 +10,21 @@ import java.sql.*;
  * @author Creyese23
  */
 public class conexion {
-    
-    
-    private static final String URL = "jdbc:mysql://localhost:3306/Registro";
-    private static final String User = "root";
-    private static final String Psw = "";
+   
     
     public static Connection getConexion(){
+        
+    String URL = "jdbc:mysql://localhost:3306/registro";
+    String User = "root";
+    String Psw = "";
         try{
-            
+            Class.forName("com.mysql.cj.jdbc.Driver");
             return DriverManager.getConnection(URL, User, Psw);
-        }catch(SQLException e){
-            System.out.println("Error al conectar: "+ e.getMessage());
+        }catch (ClassNotFoundException e) {
+            System.out.println("No fue posible cargar el driver.");
+
+        } catch (SQLException e) {
+            System.out.println("Hubo un error al acceder a la base de datos: " + e.getMessage());
         }
         return null;
     }
