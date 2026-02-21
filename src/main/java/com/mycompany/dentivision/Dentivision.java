@@ -3,8 +3,8 @@
  */
 package com.mycompany.dentivision;
 
-import com.mycompany.dentivision.controlador.Crud;
 import com.mycompany.dentivision.modelo.registrar_usuarios;
+import com.mycompany.dentivision.controlador.Crud;
 import java.util.Scanner;
 
 /**
@@ -12,12 +12,15 @@ import java.util.Scanner;
  * @author Creyese23
  */
 public class Dentivision {
+    
 
     public static void main(String[] args) {
 
         Scanner tec = new Scanner(System.in);
+        Crud controlador = new Crud();
         
         registrar_usuarios crear = new registrar_usuarios();
+        registrar_usuarios user = new registrar_usuarios();
         
         int op;
         boolean salir = false;
@@ -31,7 +34,7 @@ public class Dentivision {
             System.out.println("|------------- 4. Eliminar Usuarios ---------|");
             
             op = tec.nextInt();
-            
+                        
             switch (op) {
                 case 1:
                     System.out.println("Digite los datos del usuario");
@@ -46,8 +49,28 @@ public class Dentivision {
                       
                       break;
                   case 3:
-                      
-                      break;
+                        System.out.println("--- ACTUALIZAR USUARIO ---");
+                        System.out.print("Documento del usuario a modificar: ");
+                        user.setDocumento(tec.nextInt());
+                        tec.nextLine(); // Limpiar buffer
+                        
+                        System.out.print("Nuevo Tipo documento: ");
+                        user.setTipo_documento(tec.nextLine());
+                        System.out.print("Nuevo Nombre: ");
+                        user.setNombres(tec.nextLine());
+                        System.out.print("Nuevo Apellido: ");
+                        user.setApellidos(tec.nextLine());
+                        System.out.print("Nuevo Corrreo: ");
+                        user.setCorreo(tec.nextLine());
+                        System.out.print("Nuevo Contraseña: ");
+                        user.setContrasena(tec.nextLine());
+                        
+                        // ... pide el resto de datos con user.setXXX ...
+
+                        // LLAMADA AL ENLACE:
+                        controlador.actualizar(user); 
+    break;
+     
                   case 4:
                       
                       break;
