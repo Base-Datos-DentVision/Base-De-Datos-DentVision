@@ -16,6 +16,7 @@ public class Dentivision {
     public static void main(String[] args) {
 
         Scanner tec = new Scanner(System.in);
+        Crud controlador = new Crud();
         
         registrar_usuarios crear = new registrar_usuarios();
         
@@ -49,6 +50,12 @@ public class Dentivision {
                       
                       break;
                   case 4:
+                      System.out.println("--- ELIMINAR USUARIO ---");
+                    System.out.print("Digite el documento del usuario a eliminar: ");
+                    int docAEliminar = tec.nextInt();
+                    
+                    // 2. LLAMADA AL MÉTODO DE TU OTRA CLASE
+                    controlador.delete(docAEliminar); 
                       
                       break;
                   
