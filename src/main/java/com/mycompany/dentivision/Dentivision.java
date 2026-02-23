@@ -75,9 +75,18 @@ public class Dentivision {
                         System.out.println("--- ELIMINAR USUARIO ---");
                     System.out.print("Digite el documento del usuario a eliminar: ");
                     int docAEliminar = tec.nextInt();
-                    
-                    // 2. LLAMADA AL MÉTODO DE TU OTRA CLASE
-                    controlador.delete(docAEliminar); 
+
+                    // Limpiar el buffer del Scanner 
+                    tec.nextLine(); 
+
+                    System.out.print("¿Está seguro que desea eliminar al usuario " + docAEliminar + "? (S/N): ");
+                    String confirmacion = tec.nextLine();
+
+                    if (confirmacion.equalsIgnoreCase("S")) {
+                       controlador.delete(docAEliminar);
+                    } else {
+                        System.out.println("Operación cancelada.");
+                     }
 
                         break;
                     default:
