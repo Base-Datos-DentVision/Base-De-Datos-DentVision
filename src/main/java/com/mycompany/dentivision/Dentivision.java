@@ -64,9 +64,14 @@ public class Dentivision {
                         System.out.println("Confirmar Contrasena");
                         conf_cont = tec.next();
                         ingresar.setConfirmar_contrasena(conf_cont);
+                        controlador.Crear(ingresar); 
                         break;
                     case 2:
-                        listar.leer();
+                        System.out.println("\n|------- USUARIOS REGISTRADOS -------|");
+                        for (registrar_usuarios u : controlador.leer()) {
+                        System.out.println("Nombre: " + u.getNombres() + " " + u.getApellidos() + " | Correo: " + u.getCorreo());
+                    }
+                        System.out.println("|------------------------------------|\n");
                         break;
                     case 3:
 
@@ -75,22 +80,17 @@ public class Dentivision {
                         System.out.println("--- ELIMINAR USUARIO ---");
                         System.out.print("Digite el documento del usuario a eliminar: ");
 
-                        // 1. VALIDACIÓN DE ENTRADA
-                        while (!tec.hasNextInt()) {
-                        System.out.println("Error: ¡Debes ingresar un número válido!");
-                        System.out.print("Digite el documento: ");
-                        tec.next(); 
-                        }
-    
-                        int docAEliminar = tec.nextInt();
-                         tec.nextLine(); // Limpiar el buffer después de leer el entero
+                        // 1. CAPTURA COMO STRING (Ya no necesitas el while de hasNextInt)
+                        String docAEliminar = tec.next(); 
+                            tec.nextLine(); // Limpiar el buffer
 
                         // 2. CONFIRMACIÓN
                         System.out.print("¿Está seguro que desea eliminar al usuario " + docAEliminar + "? (S/N): ");
                         String confirmacion = tec.nextLine();
 
                         if (confirmacion.equalsIgnoreCase("S")) {
-                            controlador.delete(docAEliminar);
+                        // Ahora sí coinciden: le pasas un String a un método que espera String
+                            controlador.delete(docAEliminar); 
                         } else {
                             System.out.println("Operación cancelada.");
                         }

@@ -55,9 +55,9 @@ public class Crud {
                 ResultSet rs = st.executeQuery(read)){
             while (rs.next()) {                
                 lista.add(new registrar_usuarios(
-                        rs.getString("Nombres"),
-                        rs.getString("Apellidos"),
-                        rs.getString("Correo")
+                        rs.getString("nombres"),
+                        rs.getString("apellidos"),
+                        rs.getString("correo")
                 ));
             }
         } catch (SQLException e) {
@@ -87,13 +87,13 @@ public class Crud {
     }
     
     //METODO DELETE
-    public void delete(int documento){
-        String delete = "DELETE FROM registro_usuarios WHERE documento=?";
+    public void delete(String tipo_documento){
+        String delete = "DELETE FROM registro_usuarios WHERE tipo_documento=?";
         
         try (Connection conn = conexion.getConexion();
                 PreparedStatement ps = conn.prepareStatement(delete)){
             
-            ps.setInt(1, documento);
+            ps.setString(1, tipo_documento);
             ps.executeUpdate();
             System.out.println("Usuario Eliminado Exitosamente");
             
