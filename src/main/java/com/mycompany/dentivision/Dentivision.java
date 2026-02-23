@@ -73,20 +73,27 @@ public class Dentivision {
                         break;
                     case 4:
                         System.out.println("--- ELIMINAR USUARIO ---");
-                    System.out.print("Digite el documento del usuario a eliminar: ");
-                    int docAEliminar = tec.nextInt();
+                        System.out.print("Digite el documento del usuario a eliminar: ");
 
-                    // Limpiar el buffer del Scanner 
-                    tec.nextLine(); 
+                        // 1. VALIDACIÓN DE ENTRADA
+                        while (!tec.hasNextInt()) {
+                        System.out.println("Error: ¡Debes ingresar un número válido!");
+                        System.out.print("Digite el documento: ");
+                        tec.next(); 
+                        }
+    
+                        int docAEliminar = tec.nextInt();
+                         tec.nextLine(); // Limpiar el buffer después de leer el entero
 
-                    System.out.print("¿Está seguro que desea eliminar al usuario " + docAEliminar + "? (S/N): ");
-                    String confirmacion = tec.nextLine();
+                        // 2. CONFIRMACIÓN
+                        System.out.print("¿Está seguro que desea eliminar al usuario " + docAEliminar + "? (S/N): ");
+                        String confirmacion = tec.nextLine();
 
-                    if (confirmacion.equalsIgnoreCase("S")) {
-                       controlador.delete(docAEliminar);
-                    } else {
-                        System.out.println("Operación cancelada.");
-                     }
+                        if (confirmacion.equalsIgnoreCase("S")) {
+                            controlador.delete(docAEliminar);
+                        } else {
+                            System.out.println("Operación cancelada.");
+                        }
 
                         break;
                     default:
