@@ -5,6 +5,7 @@ package com.mycompany.dentivision;
 
 import com.mycompany.dentivision.controlador.Crud;
 import com.mycompany.dentivision.modelo.registrar_usuarios;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -66,7 +67,16 @@ public class Dentivision {
                         ingresar.setConfirmar_contrasena(conf_cont);
                         break;
                     case 2:
-                        listar.leer();
+                        System.out.println("--- LISTA DE USUARIOS ---");
+
+                        List<registrar_usuarios> listaUsuarios = controlador.leer();
+
+                        for (registrar_usuarios usuario : listaUsuarios) {
+                            System.out.println("Nombre: " + usuario.getNombres());
+                            System.out.println("Apellido: " + usuario.getApellidos());
+                            System.out.println("Correo: " + usuario.getCorreo());
+                            System.out.println("----------------------------------");
+                        }
                         break;
                     case 3:
 

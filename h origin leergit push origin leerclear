@@ -1,0 +1,98 @@
+[33mcommit 3dc02794be7bcb701aaed36e9d9134e825c1d08a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mLeer_usuarios[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/leer[m[33m, [m[1;31morigin/Leer_usuarios[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 6f3b113 8aac364
+Author: Santander17 <santanderruizjuancamilo@gmail.com>
+Date:   Mon Feb 23 12:28:34 2026 -0500
+
+    Merge pull request #5 from Base-Datos-DentVision/Eliminar-usuario
+    
+    Validacion de formato
+
+[33mcommit 8aac3646627fcc600ac7739ff8bd5f2b442c642e[m[33m ([m[1;31morigin/Eliminar-usuario[m[33m)[m
+Author: Juan Santander <santanderruizjuancamilo@gmail.com>
+Date:   Mon Feb 23 12:14:57 2026 -0500
+
+    Validacion de formato
+
+[33mcommit 6f3b1136e3316c8076ecc50fb0767d15ff2ed3bf[m
+Merge: c5783ac a04cb32
+Author: Santander17 <santanderruizjuancamilo@gmail.com>
+Date:   Mon Feb 23 11:52:53 2026 -0500
+
+    Merge pull request #4 from Base-Datos-DentVision/Eliminar-usuario
+    
+    Confirmar eliminacion de usuario
+
+[33mcommit a04cb3232694e562fee997af9011c244b5cc0831[m
+Author: Juan Santander <santanderruizjuancamilo@gmail.com>
+Date:   Mon Feb 23 11:14:55 2026 -0500
+
+    Confirmar eliminacion de usuario
+
+[33mcommit c5783acaa7a51fd96c6b8806a59ced1afbc1deef[m
+Merge: 95bd0e1 a595004
+Author: Santander17 <santanderruizjuancamilo@gmail.com>
+Date:   Mon Feb 23 10:28:07 2026 -0500
+
+    Merge pull request #3 from Base-Datos-DentVision/Eliminar-usuario
+    
+    Enlace el metodo eliminar usuario
+
+[33mcommit a59500424972f9b6a1f3d3c7b34bd4e2aa661c3b[m
+Author: Juan Santander <santanderruizjuancamilo@gmail.com>
+Date:   Mon Feb 23 10:26:08 2026 -0500
+
+    Enlace el metodo eliminar usuario
+
+[33mcommit 95bd0e12aedaf7c43d91e63a9dc1949b93cf5521[m
+Merge: 0d3301f 2943a55
+Author: CHRISTIAN JESUS REYES ECHENIQUE <CREYESE23@GMAIL.COM>
+Date:   Sat Feb 21 10:47:49 2026 -0500
+
+    Merge pull request #2 from Base-Datos-DentVision/Crear_usuario
+    
+    Actualizacion de  archivos del proyecto
+
+[33mcommit 2943a557b84034700543338c7482838613fd155f[m[33m ([m[1;31morigin/Crear_usuario[m[33m)[m
+Author: christian reyes <creyese23@gmail.com>
+Date:   Sat Feb 21 10:31:31 2026 -0500
+
+    Actualizacion de  archivos del proyecto
+
+[33mcommit 0d3301f9f0546333a27825e2f8bfef71f09c2141[m
+Merge: 1c83c74 0dc4832
+Author: CHRISTIAN JESUS REYES ECHENIQUE <CREYESE23@GMAIL.COM>
+Date:   Sat Feb 21 10:18:01 2026 -0500
+
+    Merge pull request #1 from Base-Datos-DentVision/Crear_usuarios
+    
+    Crear usuarios
+
+[33mcommit 0dc48320155ec466978da8672fd71a20fecb3fcb[m
+Author: christian reyes <creyese23@gmail.com>
+Date:   Sat Feb 21 10:11:24 2026 -0500
+
+    Actualizacion de  archivos
+
+[33mcommit 1c83c74f104cf6ff4f46b4a56345f74d53f56ad9[m
+Author: Jesus Daniel Perez Berrocal <jperezbnegocios@gmail.com>
+Date:   Fri Feb 20 19:35:54 2026 -0500
+
+    Subir archivos al repositorio remoto
+
+[33mcommit dd6cce7627acfa9b17cc0c5d4cb6a56548be5e89[m
+Author: CHRISTIAN JESUS REYES ECHENIQUE <CREYESE23@GMAIL.COM>
+Date:   Fri Feb 20 18:57:49 2026 -0500
+
+    Add 'tarjet/' to .gitignore
+
+[33mcommit fa458d85560d9294bdafd98db1ef9b0751ef3fb1[m
+Author: christian reyes <creyese23@gmail.com>
+Date:   Fri Feb 20 07:34:12 2026 -0500
+
+    creacion de usuarios
+
+[33mcommit 77634ff3bc6eb9d1927af186146d7a1383907caa[m
+Author: Santander17 <santanderruizjuancamilo@gmail.com>
+Date:   Wed Feb 18 20:21:11 2026 -0500
+
+    Initial commit
