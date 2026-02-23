@@ -66,6 +66,36 @@ public class Crud {
         return lista;
     }
     
+    
+    // METODO READ POR DOCUMENTO
+    public registrar_usuarios buscarPorDocumento(int documento) {
+
+        String sql = "SELECT * FROM registro_usuarios WHERE documento = ?";
+        registrar_usuarios usuario = null;
+
+        try (Connection conn = conexion.getConexion();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, documento);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                usuario = new registrar_usuarios();
+                usuario.setTipo_documento(rs.getString("tipo_documento"));
+                usuario.setDocumento(rs.getInt("documento"));
+                usuario.setNombres(rs.getString("nombres"));
+                usuario.setApellidos(rs.getString("apellidos"));
+                usuario.setCorreo(rs.getString("correo"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return usuario;
+    }
+    
+    
     //METODO UPDATE
     public void actualizar(registrar_usuarios actualizar){
         String update = "UPDATE registro_usuarios SET tipo_documento=?, nombres=?, apellidos=?, correo=?, contrasena=? WHERE documento=?";
