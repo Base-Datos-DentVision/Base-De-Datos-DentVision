@@ -80,7 +80,7 @@ public class Dentivision {
                         System.out.println("--- ELIMINAR USUARIO ---");
                         System.out.print("Digite el documento del usuario a eliminar: ");
 
-                        // 1. CAPTURA COMO STRING (Ya no necesitas el while de hasNextInt)
+                        // 1. CAPTURA COMO STRING 
                         String docAEliminar = tec.next(); 
                             tec.nextLine(); // Limpiar el buffer
 
