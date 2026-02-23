@@ -15,7 +15,7 @@ public class conexion {
     public static Connection getConexion() {
         String URL = "jdbc:mysql://localhost:3306/registro";
         String User = "root";
-        String Psw = "";
+        String Psw = "formacion";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
