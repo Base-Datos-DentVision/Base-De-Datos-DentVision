@@ -13,9 +13,9 @@ import java.sql.*;
 public class conexion {
 
     public static Connection getConexion() {
-        String URL = "jdbc:mysql://localhost:3306/registro";
+        String URL = "jdbc:mysql://localhost:3306/dentvision";
         String User = "root";
-        String Psw = "";
+        String Psw = "1234";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");

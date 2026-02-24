@@ -5,7 +5,7 @@
 package com.mycompany.dentivision.controlador;
 
 import com.mycompany.dentivision.Configuracion.conexion;
-import com.mycompany.dentivision.modelo.registrar_usuarios;
+import com.mycompany.dentivision.modelo.Usuarios;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,14 +17,14 @@ import java.util.List;
  */
 public class Crud {
     
-    private registrar_usuarios modelo;
+    private Usuarios modelo;
     
     
     //METODO CREATE
-    public void Crear(registrar_usuarios registrar) {
+    public void Crear(Usuarios registrar) {
 
 
-        String crear = "INSERT INTO registro_usuarios (tipo_documento, documento, nombres, apellidos, correo, confirmacion_correo, contrasena, confirmarcion_contrasena) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+        String crear = "INSERT INTO Usuarios (tipo_documento, documento, nombres, apellidos, correo, confirmacion_correo, contrasena, confirmarcion_contrasena) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = conexion.getConexion();
                 PreparedStatement ps = conn.prepareStatement(crear)){
@@ -46,18 +46,20 @@ public class Crud {
     }
     
     //METODO READ
-    public List<registrar_usuarios> leer(){
-        List<registrar_usuarios> lista = new ArrayList<>();
-        String read = "SELECT * FROM registro_usuarios;";
+    public List<Usuarios> leer(){
+        List<Usuarios> lista = new ArrayList<>();
+        String read = "SELECT * FROM Usuarios;";
         
         try (Connection conn = conexion.getConexion();
                 Statement st = conn.createStatement();
                 ResultSet rs = st.executeQuery(read)){
             while (rs.next()) {                
-                lista.add(new registrar_usuarios(
-                        rs.getString("Nombres"),
-                        rs.getString("Apellidos"),
-                        rs.getString("Correo")
+                lista.add(new Usuarios(
+                        rs.getInt("documento"),
+                        rs.getString("tipo_documento"),
+                        rs.getString("nombres"),
+                        rs.getString("apellidos"),
+                        rs.getString("correo")
                 ));
             }
         } catch (SQLException e) {
@@ -67,8 +69,8 @@ public class Crud {
     }
     
     //METODO UPDATE
-    public void actualizar(registrar_usuarios actualizar){
-        String update = "UPDATE registro_usuarios SET tipo_documento=?, nombres=?, apellidos=?, correo=?, contrasena=? WHERE documento=?";
+    public void actualizar(Usuarios actualizar){
+        String update = "UPDATE Usuarios SET tipo_documento=?, nombres=?, apellidos=?, correo=?, contrasena=? WHERE documento=?";
         
         try (Connection conn = conexion.getConexion();
                 PreparedStatement ps = conn.prepareStatement(update)){
@@ -88,7 +90,7 @@ public class Crud {
     
     //METODO DELETE
     public void delete(int documento){
-        String delete = "DELETE FROM registro_usuarios WHERE documento=?";
+        String delete = "DELETE FROM Usuarios WHERE documento=?";
         
         try (Connection conn = conexion.getConexion();
                 PreparedStatement ps = conn.prepareStatement(delete)){
