@@ -60,7 +60,7 @@ public class Crud {
         return lista;
     }
 
-    // METODO READ POR DOCUMENTO
+    // OBTENER USUARIO POR DOCUMENTO
     public Usuarios buscarPorDocumento(int documento) {
         String sql = "SELECT * FROM Usuarios WHERE documento = ?";
         Usuarios usuario = null;

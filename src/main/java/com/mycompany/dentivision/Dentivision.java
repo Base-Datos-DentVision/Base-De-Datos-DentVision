@@ -21,7 +21,7 @@ public class Dentivision {
             Crud controlador = new Crud();
 
             Usuarios ingresar = new Usuarios();
-            Crud listar = new Crud();
+            
 
             int op;
             boolean salir = false;
@@ -34,6 +34,8 @@ public class Dentivision {
                 System.out.println("|------------- 2. Listar Usuarios ------------|");
                 System.out.println("|------------- 3. Actualizar Usuarios -------|");
                 System.out.println("|------------- 4. Eliminar Usuarios ---------|");
+                System.out.println("|------------- 5. Obtener Usuario por documento---------|");
+                System.out.println("|------------- 6. Salir ---------|");
 
                 System.out.println("Escoja una opcion: ");
                 op = tec.nextInt();
@@ -109,10 +111,42 @@ public class Dentivision {
                         }
 
                         break;
+                    case 5:
+                      
+                        System.out.println("--- OBTENER USUARIO POR DOCUMENTO ---");
+                        System.out.print("Digite el documento del usuario: ");
+
+                        // Validación de entrada
+                        while (!tec.hasNextInt()) {
+                            System.out.println("Error: ¡Debes ingresar un número válido!");
+                            System.out.print("Digite el documento: ");
+                            tec.next(); 
+                        }
+
+                        int docABuscar = tec.nextInt();
+                        tec.nextLine(); // limpiar buffer
+
+                        Usuarios usuarioEncontrado = controlador.buscarPorDocumento(docABuscar);
+                        if (usuarioEncontrado != null) {
+                            System.out.println("Documento: " + usuarioEncontrado.getDocumento());
+                            System.out.println("Tipo de Documento: " + usuarioEncontrado.getTipo_documento());
+                            System.out.println("Nombre: " + usuarioEncontrado.getNombres());
+                            System.out.println("Apellido: " + usuarioEncontrado.getApellidos());
+                            System.out.println("Correo: " + usuarioEncontrado.getCorreo());
+                        } else {
+                            System.out.println("No se encontró ningún usuario con ese documento.");
+                        }
+                        break;
+                    case 6:
+                        
+                        System.out.println("Saliendo del programa...");
+                        salir = true;
+                        break;
+                        
                     default:
                         System.out.println("Opcion invalida.");
                 }
-            } while (true);
+            } while (!salir);
         } catch (Exception e) {
             //e.printStackTrace();
         }
