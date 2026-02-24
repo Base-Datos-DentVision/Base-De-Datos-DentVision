@@ -4,7 +4,7 @@
 package com.mycompany.dentivision;
 
 import com.mycompany.dentivision.controlador.Crud;
-import com.mycompany.dentivision.modelo.registrar_usuarios;
+import com.mycompany.dentivision.modelo.Usuarios;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,7 +20,7 @@ public class Dentivision {
             Scanner tec = new Scanner(System.in);
             Crud controlador = new Crud();
 
-            registrar_usuarios ingresar = new registrar_usuarios();
+            Usuarios ingresar = new Usuarios();
             Crud listar = new Crud();
 
             int op;
@@ -34,7 +34,6 @@ public class Dentivision {
                 System.out.println("|------------- 2. Listar Usuarios ------------|");
                 System.out.println("|------------- 3. Actualizar Usuarios -------|");
                 System.out.println("|------------- 4. Eliminar Usuarios ---------|");
-                System.out.println("|------------- 5. Buscar Usuario por documento ------------|");
 
                 System.out.println("Escoja una opcion: ");
                 op = tec.nextInt();
@@ -70,14 +69,17 @@ public class Dentivision {
                     case 2:
                         System.out.println("--- LISTA DE USUARIOS ---");
 
-                        List<registrar_usuarios> listaUsuarios = controlador.leer();
+                        List<Usuarios> listaUsuarios = controlador.leer();
 
-                        for (registrar_usuarios usuario : listaUsuarios) {
+                        for (Usuarios usuario : listaUsuarios) {
+                            System.out.println("Documento: " + usuario.getDocumento());
+                            System.out.println("Tipo_de_Documento: " + usuario.getTipo_documento());
                             System.out.println("Nombre: " + usuario.getNombres());
                             System.out.println("Apellido: " + usuario.getApellidos());
                             System.out.println("Correo: " + usuario.getCorreo());
                             System.out.println("----------------------------------");
                         }
+                        
                         break;
                     case 3:
 
@@ -107,53 +109,13 @@ public class Dentivision {
                         }
 
                         break;
-                    case 5:
-                            System.out.println("--- BUSCAR USUARIO ---");
-                            System.out.print("Digite el documento: ");
-
-                            // VALIDACIÓN 1: Evitar entrada nula o vacía
-                            if (!tec.hasNextInt()) { 
-                                System.out.println("Error: Debe ingresar un número válido para el documento.");
-                                tec.next(); // limpiar entrada inválida
-                                break;
-                            }
-
-                            int docBuscar = tec.nextInt();
-
-                            // VALIDACIÓN 2: Formato ( documento debe ser positivos)
-                            if (docBuscar <= 0) {
-                                System.out.println("Error: El documento debe ser un número positivo.");
-                                break;
-                            }
-
-                            // VALIDACIÓN 3: Rango (ejemplo: documentos válidos entre 1000000 y 99999999)
-                            if (docBuscar < 1000000 || docBuscar > 99999999) {
-                                System.out.println("Error: Documento fuera del rango permitido.");
-                                break;
-                            }
-
-                            // Buscar usuario después de pasar las validaciones
-                            registrar_usuarios usuario = controlador.buscarPorDocumento(docBuscar);
-
-                            if (usuario != null) {
-                                System.out.println("Usuario encontrado:");
-                                System.out.println("Tipo Documento: " + usuario.getTipo_documento());
-                                System.out.println("Documento: " + usuario.getDocumento());
-                                System.out.println("Nombre: " + usuario.getNombres());
-                                System.out.println("Apellido: " + usuario.getApellidos());
-                                System.out.println("Correo: " + usuario.getCorreo());
-                            } else {
-                                System.out.println("No existe un usuario con ese documento.");
-                            }
-
-                            break;
                     default:
                         System.out.println("Opcion invalida.");
                 }
             } while (true);
         } catch (Exception e) {
-            //e.printStackTrace();5
+            //e.printStackTrace();
+        }
 
     }
-}
 }
