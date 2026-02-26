@@ -82,13 +82,13 @@ public class Dentivision {
                         String docAActualizar = tec.nextLine(); 
 
                         System.out.println("Ingrese los nuevos datos para el usuario " + docAActualizar + ":");
-
+                       //catura los nuevos datos del usuario
                         System.out.print("Nuevo Nombre: ");
                         String nuevoNombre = tec.nextLine();
 
                         System.out.print("Nuevo Email: ");
                         String nuevoEmail = tec.nextLine();
-
+                                                                                               
                         System.out.print("¿Confirmar los cambios para el documento " + docAActualizar + "? (S/N): ");
                         String confirnacion = tec.nextLine();
 
@@ -98,7 +98,7 @@ public class Dentivision {
                         System.out.println("Usuario actualizado exitosamente.");
                         } else {
                         System.out.println("Actualización cancelada.");
-
+                        }
                         break;
                     case 4:
                         System.out.println("--- ELIMINAR USUARIO ---");
