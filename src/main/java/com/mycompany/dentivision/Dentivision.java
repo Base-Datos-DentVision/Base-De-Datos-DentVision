@@ -65,6 +65,7 @@ public class Dentivision {
                         conf_cont = tec.next();
                         ingresar.setConfirmar_contrasena(conf_cont);
                         controlador.Crear(ingresar); 
+                        //
                         break;
                     case 2:
                         System.out.println("\n|------- USUARIOS REGISTRADOS -------|");
