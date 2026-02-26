@@ -20,7 +20,6 @@ public class registrar_usuarios {
     
     public registrar_usuarios(){}
 
-
     public registrar_usuarios(int documento, String tipo_documento, String nombres, String apellidos, String correo, String confirmar_correo, String contrasena, String confirmar_contrasena) {
         this.documento = documento;
         this.tipo_documento = tipo_documento;
@@ -31,6 +30,9 @@ public class registrar_usuarios {
         this.contrasena = contrasena;
         this.confirmar_contrasena = confirmar_contrasena;
     }
+
+
+    
 
     public registrar_usuarios(String nombres, String apellidos, String correo) {
     this.nombres = nombres;
