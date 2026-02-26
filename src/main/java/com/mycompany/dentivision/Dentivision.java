@@ -101,7 +101,7 @@ public class Dentivision {
                 }
             } while (true);
         } catch (Exception e) {
-            //e.printStackTrace();
+            System.out.println("Saliendo Del Programa");
         }
 
     }
