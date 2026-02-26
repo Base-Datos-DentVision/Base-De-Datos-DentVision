@@ -89,7 +89,15 @@ public class Dentivision {
                         System.out.print("Nuevo Email: ");
                         String nuevoEmail = tec.nextLine();
 
-                        
+                        System.out.print("¿Confirmar los cambios para el documento " + docAActualizar + "? (S/N): ");
+                        String confirnacion = tec.nextLine();
+
+                        if (confirnacion.equalsIgnoreCase("S")) {
+    
+                        controlador.update(docAActualizar, nuevoNombre, nuevoEmail); 
+                        System.out.println("Usuario actualizado exitosamente.");
+                        } else {
+                        System.out.println("Actualización cancelada.");
 
                         break;
                     case 4:
