@@ -75,6 +75,21 @@ public class Dentivision {
                         System.out.println("|------------------------------------|\n");
                         break;
                     case 3:
+                        System.out.println("--- ACTUALIZAR DATOS DE USUARIO ---");
+                        System.out.print("Digite el documento del usuario a actualizar: ");
+
+
+                        String docAActualizar = tec.nextLine(); 
+
+                        System.out.println("Ingrese los nuevos datos para el usuario " + docAActualizar + ":");
+
+                        System.out.print("Nuevo Nombre: ");
+                        String nuevoNombre = tec.nextLine();
+
+                        System.out.print("Nuevo Email: ");
+                        String nuevoEmail = tec.nextLine();
+
+                        
 
                         break;
                     case 4:
