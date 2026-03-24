@@ -20,7 +20,6 @@ public class registrar_usuarios {
     
     public registrar_usuarios(){}
 
-
     public registrar_usuarios(int documento, String tipo_documento, String nombres, String apellidos, String correo, String confirmar_correo, String contrasena, String confirmar_contrasena) {
         this.documento = documento;
         this.tipo_documento = tipo_documento;
@@ -32,9 +31,14 @@ public class registrar_usuarios {
         this.confirmar_contrasena = confirmar_contrasena;
     }
 
-    public registrar_usuarios(String string, String string0, String string1) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+
+    
+
+    public registrar_usuarios(String nombres, String apellidos, String correo) {
+    this.nombres = nombres;
+    this.apellidos = apellidos;
+    this.correo = correo;
+}
 
     
 
