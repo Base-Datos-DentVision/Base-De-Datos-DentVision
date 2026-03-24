@@ -93,11 +93,15 @@ public class Dentivision {
                         String confirnacion = tec.nextLine();
 
                         if (confirnacion.equalsIgnoreCase("S")) {
-    
-                        controlador.update(docAActualizar, nuevoNombre, nuevoEmail); 
-                        System.out.println("Usuario actualizado exitosamente.");
-                        } else {
-                        System.out.println("Actualización cancelada.");
+                             // 1. Creamos un objeto con los nuevos datos
+                            registrar_usuarios userUpdate = new registrar_usuarios();
+                            userUpdate.setDocumento(Integer.parseInt(docAActualizar)); // El ID para el WHERE
+                            userUpdate.setNombres(nuevoNombre);
+                            userUpdate.setCorreo(nuevoEmail);
+                            // Agrega otros set si necesitas actualizar más campos
+
+                            // 2. LLAMAMOS AL MÉTODO CORRECTO (actualizar)
+                            controlador.actualizar(userUpdate); 
                         }
                         break;
                     case 4:
