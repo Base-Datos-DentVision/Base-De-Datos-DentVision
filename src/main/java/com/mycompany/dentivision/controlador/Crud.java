@@ -28,8 +28,8 @@ public class Crud {
 
         try (Connection conn = conexion.getConexion();
                 PreparedStatement ps = conn.prepareStatement(crear)){
-            ps.setInt(1, registrar.getDocumento());
-            ps.setString(2, registrar.getTipo_documento());
+            ps.setString(1, registrar.getTipo_documento());
+            ps.setInt(2, registrar.getDocumento());
             ps.setString(3, registrar.getNombres());
             ps.setString(4, registrar.getApellidos());
             ps.setString(5, registrar.getCorreo());
